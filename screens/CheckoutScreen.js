@@ -30,9 +30,6 @@ const CheckoutScreen = ({ navigation }) => {
   const [isChecked, setChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalcheckout, setModalcheckout] = useState(false);
-  const [modalMTN, setModalMTN] = useState(false);
-  const [modalAirtel, setModalAirtel] = useState(false);
-  const [modalCard, setModalCard] = useState(false);
 
   const ChangeAddress = () => {
     navigation.navigate("checkout");
@@ -40,10 +37,9 @@ const CheckoutScreen = ({ navigation }) => {
   };
 
   const checkout = () => {
-    // navigation.navigate("order");
+    navigation.navigate("order");
     setModalcheckout(!modalcheckout);
   };
-
   return (
     <View style={{ width: "100%", height: "100%" }}>
       <View style={{ gap: 15, paddingTop: 38 }}>
@@ -58,7 +54,7 @@ const CheckoutScreen = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.goBack()}>
               <AntDesign name="arrowleft" size={24} color="black" />
             </TouchableOpacity>
-            <Text style={{ fontSize: 20, fontWeight: 700 }}>checkout</Text>
+            <Text style={{ fontSize: 20, fontWeight: "700" }}>checkout</Text>
             <Text></Text>
           </View>
         </View>
@@ -88,12 +84,12 @@ const CheckoutScreen = ({ navigation }) => {
                   padding: 6,
                 }}
               >
-                <Text style={{ fontSize: 16, fontWeight: 300, color: "#000" }}>
+                <Text style={{ fontSize: 16, fontWeight: "300", color: "#000" }}>
                   {item.name}
                 </Text>
 
                 <Text
-                  style={{ fontSize: 14, fontWeight: 500, color: "#696969" }}
+                  style={{ fontSize: 14, fontWeight: "500", color: "#696969" }}
                 >
                   {item.price} Rwf
                 </Text>
@@ -176,7 +172,7 @@ const CheckoutScreen = ({ navigation }) => {
                   width: "72%",
                   height: "100%",
                   fontSize: 16,
-                  fontWeight: 600,
+                  fontWeight: "600",
                 }}
               />
 
@@ -188,7 +184,7 @@ const CheckoutScreen = ({ navigation }) => {
                     paddingTop: 2,
                     color: "#FFB648",
                     fontSize: 16,
-                    fontWeight: 600,
+                    fontWeight: "600",
                   }}
                 >
                   Change
@@ -205,24 +201,7 @@ const CheckoutScreen = ({ navigation }) => {
               >
                 <View style={styles.modalContainer}>
                   <View style={styles.modalContent}>
-                    <Text
-                      style={{
-                        width: 70,
-                        height: 2,
-                        backgroundColor: "#a6a6a6",
-                        alignSelf: "center",
-                      }}
-                    ></Text>
-                    <Text
-                      style={{
-                        alignSelf: "center",
-                        fontWeight: 500,
-                        fontSize: 16,
-                        padding: 22,
-                      }}
-                    >
-                      Payment method
-                    </Text>
+                    <Text>This is a pop-up modal</Text>
 
                     <View
                       style={{
@@ -233,7 +212,7 @@ const CheckoutScreen = ({ navigation }) => {
                       }}
                     >
                       <Text
-                        style={{ fontSize: 16, color: "#000", fontWeight: 400 }}
+                        style={{ fontSize: 16, color: "#000", fontWeight: "400" }}
                       >
                         Password
                       </Text>
@@ -266,7 +245,7 @@ const CheckoutScreen = ({ navigation }) => {
                       }}
                     >
                       <Text
-                        style={{ fontSize: 16, color: "#000", fontWeight: 400 }}
+                        style={{ fontSize: 16, color: "#000", fontWeight: "400" }}
                       >
                         Password
                       </Text>
@@ -334,7 +313,7 @@ const CheckoutScreen = ({ navigation }) => {
                       }}
                     >
                       <Text
-                        style={{ fontSize: 16, color: "#000", fontWeight: 400 }}
+                        style={{ fontSize: 16, color: "#000", fontWeight: "400" }}
                       >
                         Password
                       </Text>
@@ -449,7 +428,7 @@ const CheckoutScreen = ({ navigation }) => {
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
-            <Text style={{ fontSize: 16, fontWeight: 500, color: "#000" }}>
+            <Text style={{ fontSize: 16, fontWeight: "500", color: "#000" }}>
               Total Price
             </Text>
             <View style={{ flexDirection: "row", gap: 10 }}>
@@ -499,487 +478,77 @@ const CheckoutScreen = ({ navigation }) => {
           >
             <View style={styles.modalContainer}>
               <View style={styles.modalContent}>
-                <Text
-                  style={{
-                    width: 70,
-                    height: 2,
-                    backgroundColor: "#a6a6a6",
-                    alignSelf: "center",
-                  }}
-                ></Text>
-                <Text
-                  style={{
-                    alignSelf: "center",
-                    fontWeight: 500,
-                    fontSize: 16,
-                    padding: 22,
-                  }}
-                >
-                  Payment method
-                </Text>
+                <Text>This is a pop-up modal</Text>
 
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: 16,
+                    gap: 6,
                     paddingBottom: 15,
                   }}
                 >
-                  <TouchableOpacity onPress={() => setModalMTN(true)}>
-                    <View
-                      style={{
-                        height: 76,
-
-                        width: "100%",
-                        backgroundColor: "#fafafa",
-                        flexDirection: "row",
-                        padding: 16,
-                      }}
-                    >
-                      <Image
-                        style={{
-                          height: 36,
-                          width: 60,
-                          justifyContent: "center",
-                          alignSelf: "center",
-                        }}
-                        source={require("../assets/image/mtn.png")}
-                      />
-                      <View
-                        style={{
-                          flexDirection: "column",
-                          paddingHorizontal: 18,
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Text>MTN Mbile money</Text>
-                        <Text>18******9877</Text>
-                      </View>
-                    </View>
-                  </TouchableOpacity>
-                  <Modal
-                    animationType="fade"
-                    transparent={true}
-                    visible={modalMTN}
-                    onRequestClose={() => {
-                      setModalMTN(!modalMTN);
-                    }}
+                  <Text
+                    style={{ fontSize: 16, color: "#000", fontWeight: "400" }}
                   >
-                    <View style={styles.modalContainer}>
-                      <View style={styles.modalContent}>
-                        <Text
-                          style={{
-                            width: 70,
-                            height: 2,
-                            backgroundColor: "#a6a6a6",
-                            alignSelf: "center",
-                            marginBottom: 15,
-                          }}
-                        ></Text>
-
-                        <View style={{ width: "100%", height: 55 }}>
-                          <TouchableOpacity
-                            onPress={() => setModalMTN(false)}
-                            style={{
-                              backgroundColor: "#FFB648",
-                              height: 55,
-                              justifyContent: "center",
-                            }}
-                          >
-                            <Text
-                              style={{
-                                textAlign: "center",
-                                color: "white",
-                                fontSize: 16,
-                              }}
-                            >
-                              Pay Now
-                            </Text>
-                          </TouchableOpacity>
-                        </View>
-                      </View>
-                    </View>
-                  </Modal>
-                  <TouchableOpacity onPress={() => setModalAirtel(true)}>
-                    <View
-                      style={{
-                        height: 76,
-                        width: "100%",
-                        backgroundColor: "#fafafa",
-                        flexDirection: "row",
-                        padding: 16,
-                      }}
-                    >
-                      <Image
-                        style={{
-                          height: 37,
-                          width: 60,
-                          justifyContent: "center",
-                          alignSelf: "center",
-                        }}
-                        source={require("../assets/image/airtel.png")}
-                      />
-                      <View
-                        style={{
-                          flexDirection: "column",
-                          paddingHorizontal: 18,
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Text>Airtel money</Text>
-                        <Text>18******9877</Text>
-                      </View>
-                    </View>
-                  </TouchableOpacity>
-                  <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={modalAirtel}
-                    onRequestClose={() => {
-                      setModalAirtel(!modalAirtel);
-                    }}
-                  >
-                    <View style={styles.modalContainer}>
-                      <View style={styles.modalContent}>
-                        <Text
-                          style={{
-                            width: 70,
-                            height: 2,
-                            backgroundColor: "#a6a6a6",
-                            alignSelf: "center",
-                            marginBottom: 15,
-                          }}
-                        ></Text>
-                        <View style={{ gap: 24, padding: 24 }}>
-                          <Image
-                            style={{
-                              height: 36,
-                              width: 55,
-                              justifyContent: "center",
-                              alignSelf: "center",
-                            }}
-                            source={require("../assets/image/airtel.png")}
-                          />
-                          <Text
-                            style={{
-                              alignSelf: "center",
-                              fontWeight: 500,
-                              fontSize: 16,
-                            }}
-                          >
-                            MTN Mobile money
-                          </Text>
-                          <View
-                            style={{
-                              justifyContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
-                            <Text
-                              style={{
-                                paddingHorizontal: 35,
-                                textAlign: "center",
-                                color: "#696969",
-                              }}
-                            >
-                              Please use MOMOPay through your phone
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={{
-                            width: "100%",
-                            height: 111,
-                            justifyContent: "center",
-                            alignItems: "center",
-                            backgroundColor: "#fff8ed",
-                            marginBottom: 28,
-                          }}
-                        >
-                          <Text>*182*8*1#</Text>
-                          <Text>code</Text>
-                          <Text>587834</Text>
-                        </View>
-                        <View style={{ width: "100%", height: 55 }}>
-                          <TouchableOpacity
-                            onPress={() => setModalAirtel(false)}
-                            style={{
-                              backgroundColor: "#FFB648",
-                              height: 55,
-                              justifyContent: "center",
-                            }}
-                          >
-                            <Text
-                              style={{
-                                textAlign: "center",
-                                color: "white",
-                                fontSize: 16,
-                              }}
-                            >
-                              Pay Now
-                            </Text>
-                          </TouchableOpacity>
-                        </View>
-                      </View>
-                    </View>
-                  </Modal>
-                  <TouchableOpacity onPress={() => setModalCard(true)}>
-                    <View
-                      style={{
-                        height: 76,
-                        width: "100%",
-                        backgroundColor: "#fafafa",
-                        flexDirection: "row",
-                        padding: 16,
-                      }}
-                    >
-                      <Image
-                        style={{
-                          height: 16,
-                          width: 49,
-                          resizeMode: "container",
-                          justifyContent: "center",
-                          alignSelf: "center",
-                        }}
-                        source={require("../assets/image/visa.png")}
-                      />
-                      <View
-                        style={{
-                          flexDirection: "column",
-                          paddingHorizontal: 18,
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Text>Credit card</Text>
-                        <Text>18******9877</Text>
-                      </View>
-                    </View>
-                  </TouchableOpacity>
-                  <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={modalCard}
-                    onRequestClose={() => {
-                      setModalCard(!modalCard);
-                    }}
-                  >
-                    <View style={styles.modalContainer}>
-                      <View style={styles.modalContent}>
-                        <Text
-                          style={{
-                            width: 70,
-                            height: 2,
-                            backgroundColor: "#a6a6a6",
-                            alignSelf: "center",
-                            marginBottom: 15,
-                          }}
-                        ></Text>
-                        <View
-                          style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: 6,
-                            paddingBottom: 15,
-                          }}
-                        >
-                          <Text
-                            style={{
-                              fontSize: 16,
-                              color: "#000",
-                              fontWeight: 400,
-                            }}
-                          >
-                            Password
-                          </Text>
-                          <View
-                            style={{
-                              height: 60,
-                              backgroundColor: "#EAE6E6",
-                              padding: 10,
-
-                              flexDirection: "row",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <TextInput
-                              placeholder="Create Password"
-                              placeholderTextColor="black"
-                              style={{
-                                backgroundColor: "transparent",
-                                width: "80%",
-                                height: "100%",
-                              }}
-                            />
-                          </View>
-                        </View>
-                        <View
-                          style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: 6,
-                            paddingBottom: 15,
-                          }}
-                        >
-                          <Text
-                            style={{
-                              fontSize: 16,
-                              color: "#000",
-                              fontWeight: 400,
-                            }}
-                          >
-                            Password
-                          </Text>
-                          <View
-                            style={{
-                              height: 60,
-                              backgroundColor: "#EAE6E6",
-                              padding: 10,
-
-                              flexDirection: "row",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <TextInput
-                              placeholder="Create Password"
-                              placeholderTextColor="black"
-                              style={{
-                                backgroundColor: "transparent",
-                                width: "80%",
-                                height: "100%",
-                              }}
-                            />
-                          </View>
-                        </View>
-                        <View
-                          style={{
-                            flexDirection: "row",
-                            gap: 8,
-                            paddingBottom: 20,
-                          }}
-                        >
-                          <View
-                            style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: 6,
-                              paddingBottom: 15,
-                            }}
-                          >
-                            <Text
-                              style={{
-                                fontSize: 16,
-                                color: "#000",
-                                fontWeight: 400,
-                              }}
-                            >
-                              Password
-                            </Text>
-                            <View
-                              style={{
-                                height: 60,
-                                backgroundColor: "#EAE6E6",
-                                padding: 10,
-
-                                flexDirection: "row",
-                                justifyContent: "space-between",
-                              }}
-                            >
-                              <TextInput
-                                placeholder="Create Password"
-                                placeholderTextColor="black"
-                                style={{
-                                  backgroundColor: "transparent",
-                                  width: "45%",
-                                  height: "100%",
-                                }}
-                              />
-                            </View>
-                          </View>
-                          <View
-                            style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: 6,
-                              paddingBottom: 15,
-                            }}
-                          >
-                            <Text
-                              style={{
-                                fontSize: 16,
-                                color: "#000",
-                                fontWeight: 400,
-                              }}
-                            >
-                              Password
-                            </Text>
-                            <View
-                              style={{
-                                height: 60,
-                                backgroundColor: "#EAE6E6",
-                                padding: 10,
-
-                                flexDirection: "row",
-                                justifyContent: "space-between",
-                              }}
-                            >
-                              <TextInput
-                                placeholder="Create Password"
-                                placeholderTextColor="black"
-                                style={{
-                                  backgroundColor: "transparent",
-                                  width: "45%",
-                                  height: "100%",
-                                }}
-                              />
-                            </View>
-                          </View>
-                        </View>
-                        <View style={{ width: "100%", height: 55 }}>
-                          <TouchableOpacity
-                            onPress={() => setModalCard(false)}
-                            style={{
-                              backgroundColor: "#FFB648",
-                              height: 55,
-                              justifyContent: "center",
-                            }}
-                          >
-                            <Text
-                              style={{
-                                textAlign: "center",
-                                color: "white",
-                                fontSize: 16,
-                              }}
-                            >
-                              Pay Now
-                            </Text>
-                          </TouchableOpacity>
-                        </View>
-                      </View>
-                    </View>
-                  </Modal>
-                </View>
-
-                <View style={{ width: "100%", height: 55 }}>
-                  <TouchableOpacity
-                    onPress={() => setModalcheckout(false)}
+                    Password
+                  </Text>
+                  <View
                     style={{
-                      backgroundColor: "#FFB648",
-                      height: 55,
-                      justifyContent: "center",
+                      height: 60,
+                      backgroundColor: "#EAE6E6",
+                      padding: 10,
+
+                      flexDirection: "row",
+                      justifyContent: "space-between",
                     }}
                   >
-                    <Text
+                    <TextInput
+                      placeholder="Create Password"
+                      placeholderTextColor="black"
                       style={{
-                        textAlign: "center",
-                        color: "white",
-                        fontSize: 16,
+                        backgroundColor: "transparent",
+                        width: "80%",
+                        height: "100%",
                       }}
-                    >
-                      Pay Now
-                    </Text>
-                  </TouchableOpacity>
+                    />
+                  </View>
                 </View>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 6,
+                    paddingBottom: 15,
+                  }}
+                >
+                  <Text
+                    style={{ fontSize: 16, color: "#000", fontWeight: "400" }}
+                  >
+                    Password
+                  </Text>
+                  <View
+                    style={{
+                      height: 60,
+                      backgroundColor: "#EAE6E6",
+                      padding: 10,
+
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <TextInput
+                      placeholder="Create Password"
+                      placeholderTextColor="black"
+                      style={{
+                        backgroundColor: "transparent",
+                        width: "80%",
+                        height: "100%",
+                      }}
+                    />
+                  </View>
+                </View>
+                <Button title="Close Modal" onPress={checkout} />
               </View>
             </View>
           </Modal>
@@ -1030,5 +599,51 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
 });
+// const CheckoutScreen = () => {
+//   const [isModalVisible, setModalVisible] = useState(false);
+
+//   const toggleModal = () => {
+//     setModalVisible(!isModalVisible);
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Button title="Show Modal" onPress={toggleModal} />
+
+//       <Modal
+//         animationType="slide" // You can use 'fade', 'slide', or 'none'
+//         transparent={true}
+//         visible={isModalVisible}
+//         onRequestClose={toggleModal} // Android back button support
+//       >
+//         <View style={styles.modalContainer}>
+//           <View style={styles.modalContent}>
+//             <Text>This is a pop-up modal</Text>
+//             <Button title="Close Modal" onPress={toggleModal} />
+//           </View>
+//         </View>
+//       </Modal>
+//     </View>
+//   );
+// };
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//   },
+//   modalContainer: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//     backgroundColor: "rgba(0, 0, 0, 0.5)",
+//   },
+//   modalContent: {
+//     width: 300,
+//     backgroundColor: "white",
+//     padding: 20,
+//     borderRadius: 10,
+//   },
+// });
 
 export default CheckoutScreen;
