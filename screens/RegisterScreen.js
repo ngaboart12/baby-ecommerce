@@ -42,6 +42,7 @@ const RegisterScreen = ({ navigation }) => {
           uid: user.uid,
           username: username,
           email: email,
+          cart: [],
         }).then(async (response) => {
           await sendEmailVerification(user);
           window.alert("verify your email");

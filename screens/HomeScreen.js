@@ -414,54 +414,56 @@ const HomeScreen = ({ navigation }) => {
                     />
                   </Svg>
                 </TouchableOpacity>
-                <View style={{ flexWrap: "wrap", gap: 8 }}>
+                <View style={{}}>
                   <FlatList
                     numColumns={numColumns2}
                     data={category}
                     renderItem={({ item, index }) => {
                       return (
-                        <TouchableOpacity
-                          key={index}
-                          onPress={() =>
-                            navigation.navigate("product", {
-                              cate: `${item.catName}`,
-                            })
-                          }
-                          style={{
-                            backgroundColor: "#FFF4E3",
-                            height: 70,
-                            width: 110,
-                            alignItems: "center",
-                            padding: 5,
-                            gap: 7,
-                          }}
-                        >
-                          <Svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <Path
-                              d="M22.7001 8.91041L19.7331 7.75255L20.833 16.7839L11.2021 19.2L10.095 10.0765L7.45226 12.6525L4.66669 6.77708L9.16361 2.40999L11.5649 1.7952C11.6823 2.60452 12.0141 3.31683 12.4905 3.78191C12.9669 4.247 13.5506 4.42851 14.1184 4.28817C14.6863 4.14783 15.194 3.69661 15.5344 3.02967C15.8748 2.36272 16.0214 1.53217 15.9433 0.713161L18.7874 0L24 2.04931L22.7001 8.91041Z"
-                              fill="#FFB648"
-                            />
-                            <Path
-                              d="M14.6667 23.0971L8.95264 24L8.11311 13.07L5.3929 23.6322L0 20.7727L3.86647 5.75999L13.4441 7.18771L14.6667 23.0971Z"
-                              fill="#F9DE67"
-                            />
-                          </Svg>
-                          <Text
+                        <View style={{ padding: 4 }}>
+                          <TouchableOpacity
+                            key={index}
+                            onPress={() =>
+                              navigation.navigate("product", {
+                                cate: `${item.catName}`,
+                              })
+                            }
                             style={{
-                              textAlign: "center",
-                              fontWeight: 300,
-                              fontSize: 14,
+                              backgroundColor: "#FFF4E3",
+                              height: 70,
+                              width: 110,
+                              alignItems: "center",
+                              gap: 7,
+                              margin: 0,
                             }}
                           >
-                            {item.catName}
-                          </Text>
-                        </TouchableOpacity>
+                            <Svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <Path
+                                d="M22.7001 8.91041L19.7331 7.75255L20.833 16.7839L11.2021 19.2L10.095 10.0765L7.45226 12.6525L4.66669 6.77708L9.16361 2.40999L11.5649 1.7952C11.6823 2.60452 12.0141 3.31683 12.4905 3.78191C12.9669 4.247 13.5506 4.42851 14.1184 4.28817C14.6863 4.14783 15.194 3.69661 15.5344 3.02967C15.8748 2.36272 16.0214 1.53217 15.9433 0.713161L18.7874 0L24 2.04931L22.7001 8.91041Z"
+                                fill="#FFB648"
+                              />
+                              <Path
+                                d="M14.6667 23.0971L8.95264 24L8.11311 13.07L5.3929 23.6322L0 20.7727L3.86647 5.75999L13.4441 7.18771L14.6667 23.0971Z"
+                                fill="#F9DE67"
+                              />
+                            </Svg>
+                            <Text
+                              style={{
+                                textAlign: "center",
+                                fontWeight: 300,
+                                fontSize: 14,
+                              }}
+                            >
+                              {item.catName}
+                            </Text>
+                          </TouchableOpacity>
+                        </View>
                       );
                     }}
                     scrollEnabled={false}
